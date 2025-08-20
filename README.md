@@ -1,55 +1,88 @@
 # Shipping-File-Automation
 
-**Setup and Usage**
-1. Create a main folder (Already created, you can skip this step or create a new one if you want)
-
-  ```mkdir ~/mainfolder```
+## Installation
 
 
-3. Navigate into the working folder
+### 1. Clone this repository
+```
+git clone https://github.com/NunnyAnu/Shipping-File-Automation
+```
+### 2. Navigate into the working folder
 
-  ```cd ~/mainfolder```
+```
+cd Shipping-File-Automation/mainfolder
+```
 
-4. Create a new Conda environment 
+### 3. Create a new Python environment 
+#### With Python VENV
+```
+python -m venv shipenv
+source shipenv/bin/activate   # (Linux / macOS)
+shipenv\Scripts\activate      # (Windows PowerShell / CMD)
+```
 
-  ```conda create -n shipenv python=3.11 pip```
+#### With Conda
+```
+conda create -n shipenv python=3.11 pip
+conda activate shipenv
+```
 
-shipenv = environment name
-python=3.11 = Python version
-pip = install pip inside the environment
+### 4. Install required libraries and the dependencies
 
-When prompted Proceed ([y]/n)?, type y and press Enter ✅
+```
+pip install --upgrade pip
+pip install pandas openpyxl xlsxwriter pyinstaller
+```
 
-4. Activate the environment
-
-  ```conda activate shipenv```
-
-5. Install required libraries and the dependencies
-
-  ```pip install --upgrade pip```
-
-  ```pip install pandas openpyxl xlsxwriter pyinstaller```
-
-6. Compile Python file into .exe
-
-  ```pyinstaller --onefile run_file.py```
+### 5. Edit Input and Output paths in ```config.yaml```
+```
+paths:
+  input_folder: {INPUT FOLDER PATH}
+  output_folder: {OUTPUT FOLDER PATH}
+  mapping_file: {MAPPING FILE PATH}
+```
 
 
-The compiled .exe will be generated inside the dist/ folder
-📂 Project Structure (after compilation)
-```axlsx/
-│── output/
+### 6. Compile Python file into .exe
+#### Linux / macOS
+```
+pyinstaller --onefile --name MainApp \
+  --add-data=config.yaml:. \
+  --add-data=AccCode_Mapping.csv:. \
+  --hidden-import=openpyxl \
+  --hidden-import=xlsxwriter \
+  main.py
+```
+#### Windows (PowerShell or CMD)
+```
+pyinstaller --onefile --name MainApp `
+  --add-data "config.yaml;." `
+  --add-data "AccCode_Mapping.csv;." `
+  --hidden-import openpyxl `
+  --hidden-import xlsxwriter `
+  main.py
+
+```
+The compiled .exe will be generated inside the `dist/` folder
+
+### 📂 Project Structure (after compilation)
+```
+mainfolder/
 │── input/    
-│── run_file.py
-│── shipenv/        # Conda environment
-│── build/          # Temporary files from PyInstaller
-│── dist/           # Final executable output
-│    └── run_file.exe```
+│── output/
+│── main.py
+│── AccCode_Mapping.csv    # CSV for Code Mapping
+│── config.yaml            # Paths config
+│── shipenv/               # Python environment
+│── build/                 # Temporary files from PyInstaller
+│── dist/                  # Final executable output
+│    └── MainApp.exe
+```
 
 
-**Usage**
-1. Put the file(s) you want to process into the input folder (you can add more than one file).
-2. Go to the dist/ folder and double-click run_file.exe.
-3. The processed file(s) will appear in the output folder.
+## Usage
+1. Put the file(s) you want to process into the `/input` folder (you can add more than one file).
+2. Go to the dist/ folder and double-click `MainApp.exe`.
+3. The processed file(s) will appear in the `/output` folder.
 
 

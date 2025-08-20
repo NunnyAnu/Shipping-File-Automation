@@ -1,0 +1,4 @@
+paths:
+  input_folder: "/home/icetenny/cybersoft/Shipping-File-Automation/mainfolder/input"
+  output_folder: "/home/icetenny/cybersoft/Shipping-File-Automation/mainfolder/output"
+  mapping_file: "/home/icetenny/cybersoft/Shipping-File-Automation/mainfolder/AccCode_Mapping.csv"
