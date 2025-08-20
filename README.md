@@ -54,14 +54,14 @@ paths:
     main.py
   ```
 #### Windows (PowerShell or CMD)
-    ```
-    pyinstaller --onefile --name MainApp `
+  ```
+  pyinstaller --onefile --name MainApp `
     --add-data "config.yaml;." `
     --add-data "AccCode_Mapping.csv;." `
     --hidden-import openpyxl `
     --hidden-import xlsxwriter `
     main.py
-    ```
+  ```
 The compiled .exe will be generated inside the `dist/` folder
 
 ### 📂 Project Structure (after compilation)
