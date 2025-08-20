@@ -1,0 +1,78 @@
+AccName,AccCode
+Cash and cash equivalents,111000
+Short-term investments,112000
+"Trade and other receivables, net",113000
+Current portion of finance lease receivables,121100
+Short-term loans to related parties,131000
+Short-term loan to third party,132000
+Inventories,140000
+Derivatives assets  (current),151000
+Other current assets,152000
+Non-current assets classified as held-for-sale,152900
+Restricted bank deposits,160000
+"Finance lease receivables, net",121200
+Investments in subsidiaries,171000
+Investments in associates,172000
+Investment in joint ventures,173000
+Financial assets measured at fair value through other comprehensive income,174000
+Long-term loans to related parties,133000
+Long-term loans to third party,134000
+"Investment properties, net",181000
+"Property, plant and equipment, net",182000
+"Right-of-use assets, net",183000
+"Intangible assests, net",184000
+Goodwill,185000
+Deferred tax assets,191000
+Retentions,192000
+Derivatives assets (non current),151200
+Other non-current assets,193000
+Bank overdrafts and short-term loans from financial institution,211000
+Trade and other payables,212000
+Current portion of contingent consideration paid for investment,221100
+Current portion of long-term loans from financial institution,232100
+Current portion of lease liabilities,243100
+Short-term loans from related parties,251000
+Short-term borrowings – others,252000
+Derivatives liabilities  (current),213000
+Income tax payables,214000
+Other current liabilities,215000
+Contingent consideration paid for investment,221200
+Long-term loans from financial institution,232200
+"Lease liabilities, net",243200
+Employee benefit obligations,224000
+Long-term loans from related parties,253000
+Long-term loans from third party,254000
+Decommissioning provision,225000
+Deferred tax liabilities,260000
+Derivatives liabilities,226000
+Other non-current liabilities,227000
+Issued and paid-up share capital - preference shares,311000
+Issued and paid-up share capital - ordinary shares,312000
+"Share premium, net",321000
+Premium on treasury shares,322000
+Surplus from business combination under common control,331000
+Surplus from share-based payments,332000
+Discount from changes in shareholding of subsidiary,333000
+Retained earnings,340000
+Appropriated - Legal reserve,341000
+Appropriated - Treasury share reserve,342000
+Unappropriated,343000
+Less Treasury shares,313000
+Other components of equity,350000
+Non-controlling interests,360000
+Revenues from services,410000
+Costs of services,510000
+Dividend income,430000
+Other income,440000
+Selling expenses,530000
+Administrative expenses,540000
+Loss from impairment on financial assets,541400
+"Gain (loss) on exchange rates, net",541500
+Finance costs,560000
+Share of profits from investments in associates and joint ventures,450000
+Income tax,590000
+Profit (loss) attributable to: Non controling interest,610000
+Other comprehensive income,600000
+Total comprehensive income attributable to: Non controling interest,620000
+Statement of Comprehensive Income : Non-controlling interests,630000
+Statement of Comprehensive Income : Owners of the Company,640000
