@@ -9,30 +9,30 @@ git clone https://github.com/NunnyAnu/Shipping-File-Automation
 ```
 ### 2. Navigate into the working folder
 
-  ```
-  cd Shipping-File-Automation/mainfolder
-  ```
+```
+cd Shipping-File-Automation/mainfolder
+```
 
 ### 3. Create a new Python environment 
 #### With Python VENV
-  ```
-  python -m venv shipenv
-  source shipenv/bin/activate   # (Linux / macOS)
-  shipenv\Scripts\activate      # (Windows PowerShell / CMD)
-  ```
+```
+python -m venv shipenv
+source shipenv/bin/activate   # (Linux / macOS)
+shipenv\Scripts\activate      # (Windows PowerShell / CMD)
+```
 
 #### With Conda
-  ```
-  conda create -n shipenv python=3.11 pip
-  conda activate shipenv
-  ```
+```
+conda create -n shipenv python=3.11 pip
+conda activate shipenv
+```
 
 ### 4. Install required libraries and the dependencies
 
-  ```
-  pip install --upgrade pip
-  pip install pandas openpyxl xlsxwriter pyinstaller
-  ```
+```
+pip install --upgrade pip
+pip install pandas openpyxl xlsxwriter pyinstaller
+```
 
 ### 5. Edit Input and Output paths in ```config.yaml```
 ```
@@ -45,23 +45,24 @@ paths:
 
 ### 6. Compile Python file into .exe
 #### Linux / macOS
-  ```
-  pyinstaller --onefile --name MainApp \
-    --add-data=config.yaml:. \ 
-    --add-data=AccCode_Mapping.csv:. \
-    --hidden-import=openpyxl \
-    --hidden-import=xlsxwriter \
-    main.py
-  ```
+```
+pyinstaller --onefile --name MainApp \
+  --add-data=config.yaml:. \
+  --add-data=AccCode_Mapping.csv:. \
+  --hidden-import=openpyxl \
+  --hidden-import=xlsxwriter \
+  main.py
+```
 #### Windows (PowerShell or CMD)
-  ```
-  pyinstaller --onefile --name MainApp `
-    --add-data "config.yaml;." `
-    --add-data "AccCode_Mapping.csv;." `
-    --hidden-import openpyxl `
-    --hidden-import xlsxwriter `
-    main.py
-  ```
+```
+pyinstaller --onefile --name MainApp `
+  --add-data "config.yaml;." `
+  --add-data "AccCode_Mapping.csv;." `
+  --hidden-import openpyxl `
+  --hidden-import xlsxwriter `
+  main.py
+
+```
 The compiled .exe will be generated inside the `dist/` folder
 
 ### 📂 Project Structure (after compilation)

@@ -3,9 +3,12 @@ mainfolder/build/*
 mainfolder/dist/*
 *.spec
 
-# Data
-*/input/*
-*/output/*
+# --- Data folders ---
+mainfolder/input/*
+mainfolder/output/*
+
+!mainfolder/input/.gitkeep
+!mainfolder/output/.gitkeep
 
 # --- Python cache ---
 __pycache__/
