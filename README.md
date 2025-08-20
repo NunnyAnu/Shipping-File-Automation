@@ -1,6 +1,12 @@
 # Shipping-File-Automation
 
-## Installation
+## Quick Usage
+1. Put the file(s) you want to process into the `mainfolder/input` folder (you can add more than one file).
+2. Edit Input and Output Path in ```config.yaml```.
+3. Run or Double-click `mainfolder/MainApp.exe`.
+4. The processed file(s) will appear in the `mainfolder/output` folder.
+
+## Building .exe
 
 
 ### 1. Clone this repository
@@ -47,8 +53,6 @@ paths:
 #### Linux / macOS
 ```
 pyinstaller --onefile --name MainApp \
-  --add-data=config.yaml:. \
-  --add-data=AccCode_Mapping.csv:. \
   --hidden-import=openpyxl \
   --hidden-import=xlsxwriter \
   main.py
@@ -56,8 +60,6 @@ pyinstaller --onefile --name MainApp \
 #### Windows (PowerShell or CMD)
 ```
 pyinstaller --onefile --name MainApp `
-  --add-data "config.yaml;." `
-  --add-data "AccCode_Mapping.csv;." `
   --hidden-import openpyxl `
   --hidden-import xlsxwriter `
   main.py
@@ -65,7 +67,27 @@ pyinstaller --onefile --name MainApp `
 ```
 The compiled .exe will be generated inside the `dist/` folder
 
-### 📂 Project Structure (after compilation)
+### 7. Build Clean up
+#### Linux / macOS
+```
+mv dist/MainApp ./MainApp
+rm -rf build dist MainApp.spec
+```
+#### Windows (PowerShell)
+```
+Move-Item dist\MainApp.exe .\MainApp.exe -Force
+Remove-Item -Recurse -Force build, dist
+Remove-Item -Force MainApp.spec
+```
+#### Windows (CMD)
+```
+move dist\MainApp.exe MainApp.exe
+rmdir /s /q build
+rmdir /s /q dist
+del MainApp.spec
+```
+
+### 📂 Project Structure (after compilation and moving)
 ```
 mainfolder/
 │── input/    
@@ -73,16 +95,20 @@ mainfolder/
 │── main.py
 │── AccCode_Mapping.csv    # CSV for Code Mapping
 │── config.yaml            # Paths config
-│── shipenv/               # Python environment
-│── build/                 # Temporary files from PyInstaller
-│── dist/                  # Final executable output
-│    └── MainApp.exe
+│── shipenv/               # (Optional) Python environment
+└── MainApp.exe            # Final executable output
+```
+
+### 8. Run
+#### Linux / macOS
+```
+./MainApp
+```
+#### Windows (PowerShell or CMD)
+```
+.\MainApp.exe
 ```
 
 
-## Usage
-1. Put the file(s) you want to process into the `/input` folder (you can add more than one file).
-2. Go to the dist/ folder and double-click `MainApp.exe`.
-3. The processed file(s) will appear in the `/output` folder.
 
 

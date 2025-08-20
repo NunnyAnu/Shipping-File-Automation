@@ -103,16 +103,36 @@ def resource_path(rel_path: str) -> Path:
     return Path(base) / rel_path
 
 def load_config():
-    config_path = resource_path("config.yaml")  # always bundled one
+    config_path = Path("config.yaml")
+    if not config_path.exists():
+        print("❌ ERROR: config.yaml not found. Navigate to folder with config.yaml before running the app.")
+        sys.exit(1)   # exit with error code 1
+
     with open(config_path, "r", encoding="utf-8") as f:
         return yaml.safe_load(f)
 
 def main():
     # === Folder with Excel input files ===
     config = load_config()
+    print("\n📖 Reading Config...\n")
+    for key, value in config["paths"].items():
+        print(f"  {key:<12} → {value}")
+    print()
+
     input_folder  = Path(config["paths"]["input_folder"])
     output_folder = Path(config["paths"]["output_folder"])
-    mapping_path  = str(resource_path(Path(config["paths"]["mapping_file"]).name))
+    mapping_path  = Path(config["paths"]["mapping_file"])
+
+    if not input_folder.exists():
+        print("❌ ERROR: input_folder not found. Please edit config.yaml.")
+        return
+    if not output_folder.exists():
+        print("❌ ERROR: output_folder not found. Please edit config.yaml.")
+        return
+    if not mapping_path.exists():
+        print("❌ ERROR: mapping_file not found. Please edit config.yaml.")
+        return
+
 
     # Find all Excel files in the folder
     excel_files = list(input_folder.glob("*.xlsx"))
