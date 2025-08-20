@@ -1,14 +1,14 @@
 # Shipping-File-Automation
 
 **Setup and Usage**
-1. Create a main folder
-mkdir ~/mainfolder
-(Already created, you can skip this step or create a new one if you want)
+1. Create a main folder (Already created, you can skip this step or create a new one if you want)
+   ```mkdir ~/mainfolder```
 
-2. Navigate into the working folder
+
+3. Navigate into the working folder
 cd ~/mainfolder
 
-3. Create a new Conda environment 
+4. Create a new Conda environment 
 conda create -n shipenv python=3.11 pip
 
 shipenv = environment name
