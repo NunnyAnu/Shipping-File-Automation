@@ -3,30 +3,36 @@
 **Setup and Usage**
 1. Create a main folder (Already created, you can skip this step or create a new one if you want)
 
-```mkdir ~/mainfolder```
+  ```mkdir ~/mainfolder```
 
 
 3. Navigate into the working folder
-```cd ~/mainfolder```
+
+  ```cd ~/mainfolder```
 
 4. Create a new Conda environment 
-```conda create -n shipenv python=3.11 pip```
 
-```shipenv = environment name
+  ```conda create -n shipenv python=3.11 pip```
+
+shipenv = environment name
 python=3.11 = Python version
-pip = install pip inside the environment```
+pip = install pip inside the environment
 
 When prompted Proceed ([y]/n)?, type y and press Enter ✅
 
 4. Activate the environment
-```conda activate shipenv```
+
+  ```conda activate shipenv```
 
 5. Install required libraries and the dependencies
-```pip install --upgrade pip```
-```pip install pandas openpyxl xlsxwriter pyinstaller```
+
+  ```pip install --upgrade pip```
+
+  ```pip install pandas openpyxl xlsxwriter pyinstaller```
 
 6. Compile Python file into .exe
-```pyinstaller --onefile run_file.py```
+
+  ```pyinstaller --onefile run_file.py```
 
 
 The compiled .exe will be generated inside the dist/ folder
