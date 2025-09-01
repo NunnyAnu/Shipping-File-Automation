@@ -96,12 +96,6 @@ class DataProcessor:
         print(f"Runtime: {time.time() - start_time:.4f} seconds")
         return df_output
 
-
-def resource_path(rel_path: str) -> Path:
-    """Return absolute Path to resource."""
-    base = getattr(sys, "_MEIPASS", Path(__file__).parent)
-    return Path(base) / rel_path
-
 def load_config():
     config_path = Path("config.yaml")
     if not config_path.exists():
